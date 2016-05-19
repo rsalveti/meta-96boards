@@ -8,7 +8,7 @@ DEPENDS = "optee-client optee-os python-pycrypto-native"
 
 inherit pythonnative
 
-PV = "1.0+git${SRCPV}"
+PV = "2.0+git${SRCPV}"
 
 SRC_URI = "git://github.com/OP-TEE/optee_test.git"
 S = "${WORKDIR}/git"
