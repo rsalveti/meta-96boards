@@ -16,16 +16,16 @@ S = "${WORKDIR}/git"
 SRCREV = "5bf536242b29bf5f1b578d79da076db96c46d0b7"
 
 OPTEE_CLIENT_EXPORT = "${STAGING_DIR_TARGET}${prefix}"
-TA_DEV_KIT_DIR = "${STAGING_INCDIR}/optee/export-user_ta"
+TEEC_EXPORT         = "${STAGING_DIR_TARGET}${prefix}"
+TA_DEV_KIT_DIR      = "${STAGING_INCDIR}/optee/export-user_ta"
 
 CFLAGS += "-I${STAGING_INCDIR}"
 
 EXTRA_OEMAKE = " TA_DEV_KIT_DIR=${TA_DEV_KIT_DIR} \
                  OPTEE_CLIENT_EXPORT=${OPTEE_CLIENT_EXPORT} \
-                 CC='${CC}' LD='${LD}' AR='${AR}' \
-                 CROSS_COMPILE=${TARGET_PREFIX} \
+                 TEEC_EXPORT=${TEEC_EXPORT} \
+                 CROSS_COMPILE_HOST=${TARGET_PREFIX} \
                  CROSS_COMPILE_ta_arm64=${TARGET_PREFIX} \
-                 CFLAFS='${CFLAGS}' \
                  V=1 \
                "
 
